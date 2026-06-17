@@ -1,13 +1,185 @@
 /* global React */
 // Nexura shared design system — Lavender Paper × Couture
 
-// Page-load CSS + global micro-interactions
+// Page-load CSS + global micro-interactions + mobile-first overrides
 ; (() => {
   const s = document.createElement("style");
   s.textContent = `
     #root { animation: nx-load 0.6s cubic-bezier(0.2,0.8,0.2,1) both; }
     @keyframes nx-load { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
     @keyframes nx-pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+
+    /* Responsive Grid and Typography Overrides */
+    @media (max-width: 768px) {
+      .nx-mobile-stack {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      .nx-mobile-grid-1col {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      .nx-mobile-padding {
+        padding: 36px 20px 48px !important;
+      }
+      .nx-mobile-padding-x {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      .nx-mobile-padding-y {
+        padding-top: 36px !important;
+        padding-bottom: 36px !important;
+      }
+      .nx-mobile-h1 {
+        font-size: clamp(38px, 9vw, 56px) !important;
+        line-height: 1.05 !important;
+      }
+      .nx-mobile-h2 {
+        font-size: clamp(32px, 8vw, 44px) !important;
+        line-height: 1.1 !important;
+      }
+      .nx-mobile-h3 {
+        font-size: 24px !important;
+      }
+      .nx-mobile-body {
+        font-size: 16px !important;
+        line-height: 1.45 !important;
+        margin-top: 24px !important;
+      }
+      .nx-mobile-hide {
+        display: none !important;
+      }
+      
+      /* Nav layout mobile overrides */
+      .nx-nav {
+        grid-template-columns: 1fr auto !important;
+        padding: 16px 20px !important;
+        gap: 16px !important;
+      }
+      .nx-nav-logo {
+        justify-self: start !important;
+      }
+      .nx-nav-logo img {
+        margin-left: 0 !important;
+        height: 28px !important;
+      }
+      .nx-nav-links {
+        grid-column: 1 / span 2;
+        justify-content: center;
+        gap: 18px !important;
+        width: 100%;
+      }
+      .nx-nav-cta {
+        display: none !important;
+      }
+
+      /* Footer layout mobile overrides */
+      .nx-footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        padding: 48px 24px !important;
+      }
+      .nx-footer-bar {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 16px !important;
+      }
+      .nx-footer-bar > div {
+        text-align: center !important;
+      }
+      .nx-service-row {
+        grid-template-columns: 1fr auto !important;
+        gap: 16px !important;
+      }
+      .nx-projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 992px) {
+      .nx-projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 48px 32px !important;
+      }
+    }
+    @media (max-width: 600px) {
+      .nx-projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+      }
+    }
+    .nx-movements-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media (max-width: 1024px) {
+      .nx-movements-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 600px) {
+      .nx-movements-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .nx-grid-4col {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 992px) {
+      .nx-grid-4col {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .nx-grid-4col {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .nx-before-after-container {
+      height: 480px;
+    }
+    @media (max-width: 600px) {
+      .nx-before-after-container {
+        height: 280px !important;
+      }
+    }
+
+    /* Mood Board Page Mobile Overrides */
+    @media (max-width: 768px) {
+      #root > div > section {
+        padding: 36px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      #root > div > section > div {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        margin-top: 24px !important;
+      }
+      #root > div > section h1 {
+        font-size: clamp(48px, 12vw, 80px) !important;
+      }
+      #root > div > footer {
+        padding: 36px 20px !important;
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+      #root > div > header {
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        text-align: center !important;
+      }
+      #root > div > header > div {
+        text-align: center !important;
+      }
+    }
   `;
   document.head.appendChild(s);
 })();
@@ -104,7 +276,7 @@ function Nav({ current }) {
     { l: "Approach", h: "Nexura Approach.html", k: "approach" }];
 
   return (
-    <nav style={{
+    <nav className="nx-nav" style={{
       position: "sticky", top: 0, zIndex: 50,
       padding: "20px 24px", display: "grid",
       gridTemplateColumns: "1fr auto 1fr", alignItems: "center",
@@ -113,7 +285,7 @@ function Nav({ current }) {
       WebkitBackdropFilter: "blur(14px)",
       borderBottom: `1px solid ${COLORS.line}`
     }}>
-      <a href="index.html"
+      <a className="nx-nav-logo" href="index.html"
         onMouseEnter={() => setLogoHov(true)}
         onMouseLeave={() => setLogoHov(false)}
         style={{
@@ -122,7 +294,7 @@ function Nav({ current }) {
         }}>
         <img src="assets/logo.svg?v=1777066072255" alt="Nexura" style={{ height: "36px", marginLeft: "35px", opacity: "1", padding: "0px", objectFit: "contain" }} />
       </a>
-      <div style={{ display: "flex", gap: 32 }}>
+      <div className="nx-nav-links" style={{ display: "flex", gap: 32 }}>
         {items.map((i) =>
           <a key={i.k} href={i.h}
             onMouseEnter={() => setHl(i.k)}
@@ -137,7 +309,7 @@ function Nav({ current }) {
             }}>{i.l}</a>
         )}
       </div>
-      <div style={{ justifySelf: "end" }}>
+      <div className="nx-nav-cta" style={{ justifySelf: "end" }}>
         <a href="Nexura Contact.html"
           onMouseEnter={() => setBtnHov(true)}
           onMouseLeave={() => setBtnHov(false)}
@@ -157,8 +329,8 @@ function Nav({ current }) {
 
 function Footer() {
   return (
-    <footer style={{ padding: "64px 48px 40px", background: COLORS.ink, color: COLORS.bg }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, paddingBottom: 64, borderBottom: "1px solid #2A2235" }}>
+    <footer className="nx-mobile-padding-y" style={{ padding: "64px 48px 40px", background: COLORS.ink, color: COLORS.bg }}>
+      <div className="nx-footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, paddingBottom: 64, borderBottom: "1px solid #2A2235" }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
             <img src="assets/logo-footer.svg" alt="Nexura" style={{ height: 44 }} />
@@ -187,7 +359,7 @@ function Footer() {
           { l: "Read.cv", h: "#" }]
         } />
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: 32, paddingTop: 28, alignItems: "center" }}>
+      <div className="nx-footer-bar" style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: 32, paddingTop: 28, alignItems: "center" }}>
         <div style={{ ...MONO, color: "#8A7FA0" }}>© 2026 Nexura Studio</div>
         <div style={{ ...MONO, color: "#8A7FA0", letterSpacing: "0.25em" }}>N · E · X · U · R · A</div>
         <div style={{ ...MONO, color: "#8A7FA0", textAlign: "right" }}>Drawn by hand · Built by code</div>
@@ -211,7 +383,7 @@ function FooterCol({ title, items }) {
 
 function PageHeader({ section, eyebrow, title, italic, description }) {
   return (
-    <section style={{ padding: "88px 48px 80px", position: "relative", overflow: "hidden", borderBottom: `1px solid ${COLORS.line}` }}>
+    <section className="nx-mobile-padding" style={{ padding: "88px 48px 80px", position: "relative", overflow: "hidden", borderBottom: `1px solid ${COLORS.line}` }}>
       <div style={{ position: "absolute", right: -60, top: 20, width: 440, height: 520, opacity: 0.06, pointerEvents: "none" }}>
         <LineN color={COLORS.primary} stroke={0.9} />
       </div>
@@ -219,13 +391,13 @@ function PageHeader({ section, eyebrow, title, italic, description }) {
         
       </FadeIn>
       <FadeIn delay={80}>
-        <h1 style={{ ...DISPLAY, fontSize: "clamp(72px, 10vw, 160px)", margin: 0, color: COLORS.ink, position: "relative" }}>
+        <h1 className="nx-mobile-h1" style={{ ...DISPLAY, fontSize: "clamp(72px, 10vw, 160px)", margin: 0, color: COLORS.ink, position: "relative" }}>
           {title} <em style={{ fontStyle: "italic", color: COLORS.secondary }}>{italic}</em>
         </h1>
       </FadeIn>
       {description &&
         <FadeIn delay={180}>
-          <p style={{ ...BODY, fontSize: 19, lineHeight: 1.55, margin: "40px 0 0", color: COLORS.ink, maxWidth: 680 }}>
+          <p className="nx-mobile-body" style={{ ...BODY, fontSize: 19, lineHeight: 1.55, margin: "40px 0 0", color: COLORS.ink, maxWidth: 680 }}>
             {description}
           </p>
         </FadeIn>

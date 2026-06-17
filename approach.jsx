@@ -30,11 +30,11 @@ function Approach() {
         description="Every project runs through the same five beats — in order, without skipping. It is how we stay honest with clients and with ourselves."
       />
 
-      <section style={{ padding: "80px 48px 120px" }}>
+      <section className="nx-mobile-padding" style={{ padding: "80px 48px 120px" }}>
         <FadeIn>
           <div style={{ ...MONO, color: COLORS.muted, marginBottom: 48 }}>§ 02 · The movements</div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 24 }}>
+        <div className="nx-movements-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 24 }}>
           {APPROACH.map((a, i) => (
             <FadeIn key={a.n} delay={i * 90}>
               <div
@@ -60,11 +60,11 @@ function Approach() {
         </div>
       </section>
 
-      <section style={{ padding: "120px 48px", borderTop: `1px solid ${COLORS.line}`, background: COLORS.veil }}>
+      <section className="nx-mobile-padding" style={{ padding: "120px 48px", borderTop: `1px solid ${COLORS.line}`, background: COLORS.veil }}>
         <FadeIn>
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 64 }}>
+          <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 64 }}>
             <div style={{ ...MONO, color: COLORS.muted }}>§ 03 · Principles</div>
-            <h2 style={{ ...DISPLAY, fontSize: 72, margin: 0, color: COLORS.ink }}>
+            <h2 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 72, margin: 0, color: COLORS.ink }}>
               Five things we <em style={{ fontStyle: "italic", color: COLORS.secondary }}>hold.</em>
             </h2>
           </div>
@@ -75,6 +75,7 @@ function Approach() {
               <li
                 onMouseEnter={() => setPHov(p.n)}
                 onMouseLeave={() => setPHov(null)}
+                className="nx-mobile-stack"
                 style={{
                   display: "grid", gridTemplateColumns: "80px 1fr", gap: 32, alignItems: "baseline",
                   padding: "28px 0", borderTop: `1px solid ${COLORS.line}`,
@@ -82,7 +83,7 @@ function Approach() {
                   transition: "transform 0.3s cubic-bezier(0.2,0.8,0.2,1)",
                 }}>
                 <div style={{ ...MONO, color: COLORS.muted }}>{p.n}</div>
-                <div style={{ ...DISPLAY, fontSize: 48, color: pHov === p.n ? COLORS.primary : COLORS.ink, transition: "color 0.3s" }}>{p.line}</div>
+                <div className="nx-mobile-h3" style={{ ...DISPLAY, fontSize: 48, color: pHov === p.n ? COLORS.primary : COLORS.ink, transition: "color 0.3s" }}>{p.line}</div>
               </li>
             </FadeIn>
           ))}
@@ -90,12 +91,12 @@ function Approach() {
         </ol>
       </section>
 
-      <section style={{ padding: "120px 48px", textAlign: "center", borderTop: `1px solid ${COLORS.line}`, position: "relative", overflow: "hidden" }}>
+      <section className="nx-mobile-padding" style={{ padding: "120px 48px", textAlign: "center", borderTop: `1px solid ${COLORS.line}`, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", right: -40, top: 20, width: 360, height: 420, opacity: 0.06 }}>
           <LineN color={COLORS.primary} stroke={0.8} />
         </div>
         <div style={{ ...MONO, color: COLORS.muted, marginBottom: 24 }}>§ 04 · Begin</div>
-        <h2 style={{ ...DISPLAY, fontSize: "clamp(56px, 8vw, 112px)", margin: 0, color: COLORS.ink, position: "relative" }}>
+        <h2 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: "clamp(56px, 8vw, 112px)", margin: 0, color: COLORS.ink, position: "relative" }}>
           Ready for the<br /><em style={{ fontStyle: "italic", color: COLORS.secondary }}>first conversation?</em>
         </h2>
         <a href="Nexura Contact.html" style={{

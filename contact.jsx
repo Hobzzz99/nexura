@@ -64,12 +64,12 @@ function Contact() {
         description="Tell us where you are and where you're going. A person reads every note — within 48 hours, you'll hear back from one." />
       
 
-      <section style={{ padding: "80px 48px 120px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 96 }}>
+      <section className="nx-mobile-padding" style={{ padding: "80px 48px 120px" }}>
+        <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 96 }}>
           <FadeIn delay={0}>
           <div>
             <div style={{ ...MONO, color: COLORS.muted, marginBottom: 32 }}>§ 02 · The quiet way</div>
-            <a href="mailto:hello@nexura.studio" style={{ ...DISPLAY, fontSize: 40, color: COLORS.ink, textDecoration: "none", borderBottom: `1px solid ${COLORS.primary}`, paddingBottom: 4 }}>hello@nexura.studio</a>
+            <a href="mailto:hello@nexura.studio" className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 40, color: COLORS.ink, textDecoration: "none", borderBottom: `1px solid ${COLORS.primary}`, paddingBottom: 4 }}>hello@nexura.studio</a>
 
             <div style={{ display: "grid", gap: 28, marginTop: 64 }}>
               <div>

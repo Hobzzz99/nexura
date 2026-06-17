@@ -13,24 +13,24 @@ function Hero() {
   const [btn2Hov, setBtn2Hov] = useState(false);
 
   return (
-    <section style={{ padding: "52px 48px 64px", position: "relative", overflow: "hidden" }}>
+    <section className="nx-mobile-padding" style={{ padding: "52px 48px 64px", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", right: -60, top: 40, width: 520, height: 620, opacity: 0.08, pointerEvents: "none" }}>
         <LineN color={COLORS.primary} stroke={0.9} />
       </div>
       <FadeIn delay={100}>
-        <h1 style={{ ...DISPLAY, fontSize: "clamp(80px, 12vw, 200px)", margin: 0, color: COLORS.ink }}>
+        <h1 className="nx-mobile-h1" style={{ ...DISPLAY, fontSize: "clamp(80px, 12vw, 200px)", margin: 0, color: COLORS.ink }}>
           A studio for the<br />
           <em style={{ fontStyle: "italic", color: COLORS.secondary }}>considered</em> web.
         </h1>
       </FadeIn>
       <FadeIn delay={220}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 48, marginTop: 40, alignItems: "start" }}>
-          <div style={{ ...MONO, color: COLORS.muted, paddingTop: 6 }}> &nbsp;·&nbsp;</div>
+        <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 48, marginTop: 40, alignItems: "start" }}>
+          <div className="nx-mobile-hide" style={{ ...MONO, color: COLORS.muted, paddingTop: 6 }}> &nbsp;·&nbsp;</div>
           <div>
-            <p style={{ ...BODY, fontSize: 20, lineHeight: 1.5, margin: 0, color: COLORS.ink, maxWidth: 680 }}>
+            <p className="nx-mobile-body" style={{ ...BODY, fontSize: 20, lineHeight: 1.5, margin: 0, color: COLORS.ink, maxWidth: 680 }}>
               Nexura is a small studio of designers and engineers making websites, web apps, mobile products, and editorial imagery for teams who care how things feel. We favour the long look over the loud pitch — the kind of work that ages well because it was <em style={{ ...DISPLAY, fontSize: 22, color: COLORS.secondary }}>drawn</em>, not generated.
             </p>
-            <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
+            <div className="nx-mobile-stack" style={{ display: "flex", gap: 14, marginTop: 36 }}>
               <a href="Nexura Contact.html"
                 onMouseEnter={() => setBtn1Hov(true)}
                 onMouseLeave={() => setBtn1Hov(false)}
@@ -70,10 +70,10 @@ const TEASERS = [
 function IndexGrid() {
   const [hover, setHover] = useState(null);
   return (
-    <section style={{ padding: "120px 48px", borderTop: `1px solid ${COLORS.line}` }}>
-      <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 64 }}>
-        <div style={{ ...MONO, color: COLORS.muted }}></div>
-        <h2 style={{ ...DISPLAY, fontSize: 80, margin: 0, color: COLORS.ink }}>
+    <section className="nx-mobile-padding" style={{ padding: "120px 48px", borderTop: `1px solid ${COLORS.line}` }}>
+      <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 64 }}>
+        <div className="nx-mobile-hide" style={{ ...MONO, color: COLORS.muted }}></div>
+        <h2 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 80, margin: 0, color: COLORS.ink }}>
           A short <em style={{ fontStyle: "italic", color: COLORS.secondary }}>table of contents.</em>
         </h2>
       </div>
@@ -84,6 +84,7 @@ function IndexGrid() {
             href={t.h}
             onMouseEnter={() => setHover(t.n)}
             onMouseLeave={() => setHover(null)}
+            className="nx-mobile-grid-1col"
             style={{
               display: "grid",
               gridTemplateColumns: "80px 1fr 1.5fr 60px",
@@ -98,14 +99,14 @@ function IndexGrid() {
               paddingLeft: hover === t.n ? 12 : 0,
             }}
           >
-            <div style={{ ...MONO, color: COLORS.muted }}>{t.n}</div>
-            <div style={{ ...DISPLAY, fontSize: 72, color: hover === t.n ? COLORS.primary : COLORS.ink, transition: "color 0.3s" }}>
+            <div className="nx-mobile-hide" style={{ ...MONO, color: COLORS.muted }}>{t.n}</div>
+            <div className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 72, color: hover === t.n ? COLORS.primary : COLORS.ink, transition: "color 0.3s" }}>
               {t.title} <em style={{ fontStyle: "italic", color: COLORS.secondary, fontSize: 48 }}>{t.italic}</em>
             </div>
             <div style={{ ...BODY, fontSize: 15, lineHeight: 1.55, color: COLORS.muted, paddingTop: 18, maxWidth: 440 }}>
               {t.body}
             </div>
-            <div style={{ ...MONO, color: COLORS.ink, textAlign: "right", paddingTop: 18, fontSize: 18 }}>
+            <div className="nx-mobile-hide" style={{ ...MONO, color: COLORS.ink, textAlign: "right", paddingTop: 18, fontSize: 18 }}>
               {hover === t.n ? "→" : "↘"}
             </div>
           </a>
@@ -118,14 +119,14 @@ function IndexGrid() {
 
 function Quote() {
   return (
-    <section style={{ padding: "140px 48px", borderTop: `1px solid ${COLORS.line}`, position: "relative", overflow: "hidden" }}>
+    <section className="nx-mobile-padding" style={{ padding: "140px 48px", borderTop: `1px solid ${COLORS.line}`, position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", left: -40, top: 40, width: 420, height: 500, opacity: 0.06 }}>
         <LineN color={COLORS.primary} stroke={0.8} />
       </div>
       <FadeIn>
         <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", position: "relative" }}>
           <div style={{ ...MONO, color: COLORS.muted, marginBottom: 32 }}>A studio note — 04.26</div>
-          <blockquote style={{ ...DISPLAY, fontSize: "clamp(48px, 6vw, 96px)", margin: 0, color: COLORS.ink, lineHeight: 1.05 }}>
+          <blockquote className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: "clamp(48px, 6vw, 96px)", margin: 0, color: COLORS.ink, lineHeight: 1.05 }}>
             The <em style={{ fontStyle: "italic", color: COLORS.secondary }}>hand</em> still matters — even, especially, on the web.
           </blockquote>
           <div style={{ ...MONO, color: COLORS.muted, marginTop: 32 }}>— Nexura, principle 01</div>

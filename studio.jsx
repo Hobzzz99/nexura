@@ -21,16 +21,16 @@ const PROCESS = [
 function Grid4() {
   const [tileHov, setTileHov] = useState(null);
   return (
-    <section style={{ padding: "80px 48px", borderTop: `1px solid ${COLORS.line}` }}>
+    <section className="nx-mobile-padding" style={{ padding: "80px 48px", borderTop: `1px solid ${COLORS.line}` }}>
       <FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 48 }}>
-          <div style={{ ...MONO, color: COLORS.muted }}>§ 02 · Frame types</div>
-          <h2 style={{ ...DISPLAY, fontSize: 64, margin: 0, color: COLORS.ink }}>
+        <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 48 }}>
+          <div className="nx-mobile-hide" style={{ ...MONO, color: COLORS.muted }}>§ 02 · Frame types</div>
+          <h2 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 64, margin: 0, color: COLORS.ink }}>
             Four <em style={{ fontStyle: "italic", color: COLORS.secondary }}>rooms</em> in one studio.
           </h2>
         </div>
       </FadeIn>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+      <div className="nx-grid-4col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
         {SHOOT_TYPES.map((t, i) =>
         <FadeIn key={t.n} delay={i * 80}>
           <div
@@ -56,16 +56,16 @@ function Grid4() {
 function Process() {
   const [stepHov, setStepHov] = useState(null);
   return (
-    <section style={{ padding: "120px 48px", borderTop: `1px solid ${COLORS.line}`, background: COLORS.veil }}>
+    <section className="nx-mobile-padding" style={{ padding: "120px 48px", borderTop: `1px solid ${COLORS.line}`, background: COLORS.veil }}>
       <FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 64 }}>
+        <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 64 }}>
           <div style={{ ...MONO, color: COLORS.muted }}>§ 03 · The shoot</div>
-          <h2 style={{ ...DISPLAY, fontSize: 64, margin: 0, color: COLORS.ink }}>
+          <h2 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 64, margin: 0, color: COLORS.ink }}>
             Directed like a <em style={{ fontStyle: "italic", color: COLORS.secondary }}>shoot</em>
           </h2>
         </div>
       </FadeIn>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16 }}>
+      <div className="nx-movements-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16 }}>
         {PROCESS.map((p, i) =>
         <FadeIn key={p.n} delay={i * 80}>
           <div
@@ -96,14 +96,14 @@ function Process() {
 function BeforeAfter() {
   const [pos, setPos] = useState(50);
   return (
-    <section style={{ padding: "120px 48px", borderTop: `1px solid ${COLORS.line}` }}>
-      <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 48 }}>
+    <section className="nx-mobile-padding" style={{ padding: "120px 48px", borderTop: `1px solid ${COLORS.line}` }}>
+      <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 48, alignItems: "baseline", marginBottom: 48 }}>
         <div style={{ ...MONO, color: COLORS.muted }}>§ 04 · Treatment</div>
-        <h2 style={{ ...DISPLAY, fontSize: 64, margin: 0, color: COLORS.ink }}>
+        <h2 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 64, margin: 0, color: COLORS.ink }}>
           Generated, then <em style={{ fontStyle: "italic", color: COLORS.secondary }}>retouched.</em>
         </h2>
       </div>
-      <div style={{
+      <div className="nx-before-after-container" style={{
         position: "relative", width: "100%", height: 480, overflow: "hidden",
         background: COLORS.ink, userSelect: "none"
       }}

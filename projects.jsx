@@ -126,9 +126,9 @@ function Projects() {
         description="A selection of websites, apps, and brand identities made with care. Each one started with a conversation — most of them led somewhere unexpected."
       />
 
-      <section style={{ padding: "48px 48px 0", borderBottom: `1px solid ${COLORS.line}` }}>
+      <section className="nx-mobile-padding-x" style={{ padding: "48px 48px 0", borderBottom: `1px solid ${COLORS.line}` }}>
         <FadeIn>
-          <div style={{ display: "flex", gap: 6 }}>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
             {FILTERS.map((f) => (
               <button
                 key={f.k}
@@ -149,22 +149,22 @@ function Projects() {
         </FadeIn>
       </section>
 
-      <section style={{ padding: "80px 48px 120px" }}>
+      <section className="nx-mobile-padding" style={{ padding: "80px 48px 120px" }}>
         <FadeIn>
           <div style={{ ...MONO, color: COLORS.muted, marginBottom: 56 }}>
             § 02 &nbsp;·&nbsp; {filtered.length} project{filtered.length !== 1 ? "s" : ""}
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "72px 40px" }}>
+        <div className="nx-projects-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "72px 40px" }}>
           {filtered.map((p, i) => (
             <ProjectCard key={p.n} project={p} index={i} />
           ))}
         </div>
       </section>
 
-      <section style={{ padding: "0 48px 120px" }}>
+      <section className="nx-mobile-padding" style={{ padding: "0 48px 120px" }}>
         <FadeIn>
-          <div style={{
+          <div className="nx-mobile-stack nx-mobile-padding" style={{
             padding: 56, background: COLORS.ink, color: COLORS.bg, borderRadius: 2,
             display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 64, alignItems: "center",
             position: "relative", overflow: "hidden",
@@ -174,7 +174,7 @@ function Projects() {
             </div>
             <div style={{ position: "relative" }}>
               <div style={{ ...MONO, color: COLORS.accent }}>§ 03 · On process</div>
-              <h3 style={{ ...DISPLAY, fontSize: 60, margin: "16px 0 24px", color: COLORS.bg, lineHeight: 1 }}>
+              <h3 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 60, margin: "16px 0 24px", color: COLORS.bg, lineHeight: 1 }}>
                 Every project starts with a <em style={{ fontStyle: "italic", color: COLORS.accent }}>conversation.</em>
               </h3>
               <p style={{ ...BODY, fontSize: 16, lineHeight: 1.6, color: "#C8BED6", maxWidth: 500, margin: "0 0 32px" }}>
@@ -188,7 +188,7 @@ function Projects() {
                 display: "inline-block",
               }}>See how we work →</a>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+            <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
               {[
                 { label: "01 · Listen", tone: "primary" },
                 { label: "02 · Sketch", tone: "accent" },
@@ -202,13 +202,13 @@ function Projects() {
         </FadeIn>
       </section>
 
-      <section style={{ padding: "120px 48px", textAlign: "center", borderTop: `1px solid ${COLORS.line}`, position: "relative", overflow: "hidden" }}>
+      <section className="nx-mobile-padding" style={{ padding: "120px 48px", textAlign: "center", borderTop: `1px solid ${COLORS.line}`, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", right: -40, top: 20, width: 360, height: 420, opacity: 0.06, pointerEvents: "none" }}>
           <LineN color={COLORS.primary} stroke={0.8} />
         </div>
         <FadeIn>
           <div style={{ ...MONO, color: COLORS.muted, marginBottom: 24 }}>§ 04 · Next project</div>
-          <h2 style={{ ...DISPLAY, fontSize: "clamp(56px, 8vw, 112px)", margin: 0, color: COLORS.ink, position: "relative" }}>
+          <h2 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: "clamp(56px, 8vw, 112px)", margin: 0, color: COLORS.ink, position: "relative" }}>
             Yours could be<br /><em style={{ fontStyle: "italic", color: COLORS.secondary }}>among them.</em>
           </h2>
           <a href="Nexura Contact.html" style={{

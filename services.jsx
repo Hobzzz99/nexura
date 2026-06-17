@@ -41,6 +41,7 @@ function ServiceRow({ service, open, onClick }) {
   return (
     <div
       onClick={onClick}
+      className="nx-service-row"
       style={{
         borderTop: `1px solid ${COLORS.line}`,
         padding: "36px 0",
@@ -53,9 +54,9 @@ function ServiceRow({ service, open, onClick }) {
         paddingBottom: open ? 56 : 36,
       }}
     >
-      <div style={{ ...MONO, color: COLORS.muted, paddingTop: 18 }}>{service.n}</div>
+      <div className="nx-mobile-hide" style={{ ...MONO, color: COLORS.muted, paddingTop: 18 }}>{service.n}</div>
       <div>
-        <div style={{ ...DISPLAY, fontSize: 72, color: open ? COLORS.primary : COLORS.ink, transition: "color 0.3s" }}>
+        <div className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 72, color: open ? COLORS.primary : COLORS.ink, transition: "color 0.3s" }}>
           {service.title}
         </div>
         <div style={{ ...MONO, color: COLORS.muted, marginTop: 10 }}>{service.kicker}</div>
@@ -66,7 +67,7 @@ function ServiceRow({ service, open, onClick }) {
           transition: "max-height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s",
           marginTop: open ? 32 : 0,
         }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 48, paddingTop: 8 }}>
+          <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 48, paddingTop: 8 }}>
             <div>
               {service.lines.map((l, i) => (
                 <p key={i} style={{ ...BODY, fontSize: 17, lineHeight: 1.55, margin: "0 0 10px", color: COLORS.ink, maxWidth: 560 }}>{l}</p>
@@ -97,13 +98,13 @@ function AIPhotoshootCallout() {
   const [studioHov, setStudioHov] = useState(false);
   return (
     <FadeIn>
-      <div style={{
+      <div className="nx-mobile-stack nx-mobile-padding" style={{
         marginTop: 80, padding: 48, background: COLORS.ink, color: COLORS.bg, borderRadius: 2,
         display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center",
       }}>
         <div>
           <div style={{ ...MONO, color: COLORS.accent }}>Studio only</div>
-          <h3 style={{ ...DISPLAY, fontSize: 64, margin: "16px 0 24px", color: COLORS.bg, lineHeight: 1 }}>
+          <h3 className="nx-mobile-h2" style={{ ...DISPLAY, fontSize: 64, margin: "16px 0 24px", color: COLORS.bg, lineHeight: 1 }}>
             AI <em style={{ fontStyle: "italic", color: COLORS.accent }}>Photoshoots</em>
           </h3>
           <p style={{ ...BODY, fontSize: 16, lineHeight: 1.55, color: "#C8BED6", maxWidth: 480 }}>
@@ -120,7 +121,7 @@ function AIPhotoshootCallout() {
               transition: "transform 0.25s cubic-bezier(0.2,0.8,0.2,1)",
             }}>Visit the studio →</a>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+        <div className="nx-mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
           {[
             { label: "1 · Portrait", tone: "primary" },
             { label: "2 · Product", tone: "accent" },
@@ -147,7 +148,7 @@ function Services() {
         italic="make."
         description="Four services held under one roof. Three belong to the web. One belongs to the studio — it has its own page, its own rhythm, and its own rules."
       />
-      <section style={{ padding: "80px 48px 120px" }}>
+      <section className="nx-mobile-padding" style={{ padding: "80px 48px 120px" }}>
         <FadeIn><div style={{ ...MONO, color: COLORS.muted, marginBottom: 32 }}>Core services</div></FadeIn>
         {SERVICES.map((s) => (
           <ServiceRow key={s.n} service={s} open={open === s.n} onClick={() => setOpen(open === s.n ? null : s.n)} />
