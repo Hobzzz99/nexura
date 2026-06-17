@@ -46,34 +46,6 @@
     90% { stroke-dashoffset: 0; opacity: 0; }
     100% { stroke-dashoffset: -120; opacity: 0; }
   }
-  .nx-splash-brand {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.3em;
-    color: #402060;
-    text-transform: uppercase;
-    font-weight: 500;
-    opacity: 0;
-    animation: nx-fade-in 1.5s ease-out forwards;
-    animation-delay: 0.3s;
-  }
-  @keyframes nx-fade-in {
-    to { opacity: 0.75; }
-  }
-  .nx-splash-loader {
-    width: 100px; height: 1px;
-    background: rgba(64, 32, 96, 0.1);
-    position: relative;
-    overflow: hidden;
-  }
-  .nx-splash-progress {
-    position: absolute; left: 0; top: 0; bottom: 0; width: 40px;
-    background: #6B3EA0;
-    animation: nx-progress 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-  @keyframes nx-progress {
-    0% { left: -40px; }
-    100% { left: 100px; }
-  }
 </style>
 </head>
 <body>
@@ -88,10 +60,6 @@
         <path d="M 24 15 L 84 99" stroke="#402060" stroke-width="0.96" fill="none" stroke-linecap="round" opacity="0.4" />
         <path d="M 84 12 L 84 102" stroke="#402060" stroke-width="0.96" fill="none" stroke-linecap="round" opacity="0.4" />
       </svg>
-      <div class="nx-splash-brand">Nexura</div>
-      <div class="nx-splash-loader">
-        <div class="nx-splash-progress"></div>
-      </div>
     </div>
   </div>
 </div>
