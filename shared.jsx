@@ -388,7 +388,7 @@ function PageHeader({ section, eyebrow, title, italic, description }) {
         <LineN color={COLORS.primary} stroke={0.9} />
       </div>
       <FadeIn delay={0}>
-        
+
       </FadeIn>
       <FadeIn delay={80}>
         <h1 className="nx-mobile-h1" style={{ ...DISPLAY, fontSize: "clamp(72px, 10vw, 160px)", margin: 0, color: COLORS.ink, position: "relative" }}>
@@ -407,7 +407,7 @@ function PageHeader({ section, eyebrow, title, italic, description }) {
 }
 
 function mountApp(App, delay) {
-  delay = delay === undefined ? 3000 : delay; // 3.0 seconds delay
+  delay = delay === undefined ? 1200 : delay; // 1.2 seconds delay
   setTimeout(() => {
     ReactDOM.createRoot(document.getElementById("root")).render(App);
   }, delay);
