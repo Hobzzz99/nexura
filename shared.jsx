@@ -5,7 +5,7 @@
 ; (() => {
   const s = document.createElement("style");
   s.textContent = `
-    #root { animation: nx-load 0.6s cubic-bezier(0.2,0.8,0.2,1) both; }
+    #root.nx-mounted { animation: nx-load 0.6s cubic-bezier(0.2,0.8,0.2,1) both; }
     @keyframes nx-load { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
     @keyframes nx-pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
 
@@ -409,7 +409,9 @@ function PageHeader({ section, eyebrow, title, italic, description }) {
 function mountApp(App, delay) {
   delay = delay === undefined ? 1200 : delay; // 1.2 seconds delay
   setTimeout(() => {
-    ReactDOM.createRoot(document.getElementById("root")).render(App);
+    const rootEl = document.getElementById("root");
+    if (rootEl) rootEl.classList.add("nx-mounted");
+    ReactDOM.createRoot(rootEl).render(App);
   }, delay);
 }
 
