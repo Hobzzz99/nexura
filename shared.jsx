@@ -98,7 +98,7 @@ function Nav({ current }) {
   const [btnHov, setBtnHov] = React.useState(false);
   const [logoHov, setLogoHov] = React.useState(false);
   const items = [
-    { l: "Home", h: "Nexura Homepage.html", k: "home" },
+    { l: "Home", h: "index.html", k: "home" },
     { l: "Services", h: "Nexura Services.html", k: "services" },
     { l: "Projects", h: "Nexura Projects.html", k: "projects" },
     { l: "Approach", h: "Nexura Approach.html", k: "approach" }];
@@ -113,7 +113,7 @@ function Nav({ current }) {
       WebkitBackdropFilter: "blur(14px)",
       borderBottom: `1px solid ${COLORS.line}`
     }}>
-      <a href="Nexura Homepage.html"
+      <a href="index.html"
         onMouseEnter={() => setLogoHov(true)}
         onMouseLeave={() => setLogoHov(false)}
         style={{
@@ -168,7 +168,7 @@ function Footer() {
           </p>
         </div>
         <FooterCol title="Pages" items={[
-          { l: "Home", h: "Nexura Homepage.html" },
+          { l: "Home", h: "index.html" },
           { l: "Services", h: "Nexura Services.html" },
           { l: "Studio", h: "Nexura Studio.html" },
           { l: "Approach", h: "Nexura Approach.html" },

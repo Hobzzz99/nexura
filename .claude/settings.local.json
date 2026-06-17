@@ -3,16 +3,19 @@
     "allow": [
       "Bash(python -m http.server 8080)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
-      "PowerShell(Start-Process \"http://localhost:8080/Nexura Homepage.html\"; Start-Process \"http://localhost:8080/Nexura Mood Board.html\")",
+      "PowerShell(Start-Process \"http://localhost:8080/index.html\"; Start-Process \"http://localhost:8080/Nexura Mood Board.html\")",
       "PowerShell(Copy-Item *)",
       "PowerShell(Stop-Process *)",
       "PowerShell(cd \"E:\\\\Nexura \\(1\\)\"; Start-Process python -ArgumentList \"-m\", \"http.server\", \"8080\" -WorkingDirectory \"E:\\\\Nexura \\(1\\)\" -WindowStyle Hidden; Start-Sleep 2; \\(Invoke-WebRequest -Uri \"http://localhost:8080/\" -UseBasicParsing\\).StatusCode)",
-      "PowerShell(Start-Process \"http://localhost:8080/Nexura Homepage.html\")",
-      "PowerShell(Start-Process \"http://localhost:8080/Nexura Homepage.html?nocache=1\")",
-      "PowerShell(Start-Process \"msedge\" -ArgumentList \"--inprivate\", \"http://localhost:8080/Nexura Homepage.html\" -ErrorAction SilentlyContinue; Start-Process \"chrome\" -ArgumentList \"--incognito\", \"http://localhost:8080/Nexura Homepage.html\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Start-Process \"http://localhost:8080/index.html\")",
+      "PowerShell(Start-Process \"http://localhost:8080/index.html?nocache=1\")",
+      "PowerShell(Start-Process \"msedge\" -ArgumentList \"--inprivate\", \"http://localhost:8080/index.html\" -ErrorAction SilentlyContinue; Start-Process \"chrome\" -ArgumentList \"--incognito\", \"http://localhost:8080/index.html\" -ErrorAction SilentlyContinue)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)"
     ]
   }
 }
