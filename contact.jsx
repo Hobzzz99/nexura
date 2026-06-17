@@ -160,4 +160,4 @@ function Contact() {
 
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<Contact />);
+mountApp(<Contact />);

@@ -594,4 +594,4 @@ function isLight(hex) {
   return L > 0.6;
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+mountApp(<App />);

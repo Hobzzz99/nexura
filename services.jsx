@@ -161,4 +161,4 @@ function Services() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<Services />);
+mountApp(<Services />);

@@ -112,4 +112,4 @@ function Approach() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<Approach />);
+mountApp(<Approach />);

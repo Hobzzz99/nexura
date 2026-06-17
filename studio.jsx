@@ -159,4 +159,4 @@ function Studio() {
 
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<Studio />);
+mountApp(<Studio />);

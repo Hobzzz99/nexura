@@ -225,4 +225,4 @@ function Projects() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<Projects />);
+mountApp(<Projects />);

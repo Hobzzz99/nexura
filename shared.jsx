@@ -406,5 +406,12 @@ function PageHeader({ section, eyebrow, title, italic, description }) {
 
 }
 
+function mountApp(App, delay) {
+  delay = delay === undefined ? 3000 : delay; // 3.0 seconds delay
+  setTimeout(() => {
+    ReactDOM.createRoot(document.getElementById("root")).render(App);
+  }, delay);
+}
+
 // expose
-Object.assign(window, { LineN, StripedTile, Nav, Footer, FooterCol, PageHeader, FadeIn, useFadeIn });
+Object.assign(window, { LineN, StripedTile, Nav, Footer, FooterCol, PageHeader, FadeIn, useFadeIn, mountApp });
